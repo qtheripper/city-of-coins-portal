@@ -13,15 +13,36 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-background">
-      <div className="text-center space-y-6 animate-fade-in">
-        <h1 className="text-6xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+    <div className="fixed inset-0 flex items-center justify-center bg-background overflow-hidden">
+      {/* Background geometric patterns */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-0 left-1/4 w-96 h-96 border-l-8 border-t-8 border-primary/20 transform -rotate-12" />
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 border-r-8 border-b-8 border-primary/20 transform rotate-12" />
+        <div className="absolute top-1/3 right-1/3 w-64 h-64 border-4 border-primary/15" />
+      </div>
+
+      <div className="relative z-10 text-center space-y-8 animate-fade-in px-4">
+        {/* Logo circle */}
+        <div className="flex justify-center mb-4">
+          <div className="w-24 h-24 rounded-full bg-background border-2 border-primary/30 flex items-center justify-center shadow-lg">
+            <span className="text-2xl font-bold text-foreground">₿</span>
+          </div>
+        </div>
+
+        {/* Title */}
+        <h1 className="text-5xl md:text-6xl font-light tracking-wider text-foreground">
           City of Coins
         </h1>
-        <div className="flex justify-center">
-          <div className="w-12 h-12 border-4 border-primary/30 border-t-primary rounded-full animate-spin" />
+
+        {/* Tagline */}
+        <p className="text-sm text-muted-foreground max-w-md mx-auto">
+          Powered by Your Stateside Crypto Exchange
+        </p>
+
+        {/* Loading spinner */}
+        <div className="flex justify-center pt-4">
+          <div className="w-10 h-10 border-3 border-primary/30 border-t-primary rounded-full animate-spin" />
         </div>
-        <p className="text-muted-foreground">Redirecting...</p>
       </div>
     </div>
   );
