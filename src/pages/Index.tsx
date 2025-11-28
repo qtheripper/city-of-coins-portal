@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import logo from "@/assets/city-of-coins-logo.png";
 
 const Index = () => {
   const [isRedirecting, setIsRedirecting] = useState(false);
@@ -22,11 +23,13 @@ const Index = () => {
       </div>
 
       <div className="relative z-10 text-center space-y-8 animate-fade-in px-4">
-        {/* Logo circle */}
+        {/* Logo */}
         <div className="flex justify-center mb-4">
-          <div className="w-24 h-24 rounded-full bg-background border-2 border-primary/30 flex items-center justify-center shadow-lg">
-            <span className="text-2xl font-bold text-foreground">₿</span>
-          </div>
+          <img 
+            src={logo} 
+            alt="City of Coins Logo" 
+            className="w-32 h-32 object-contain"
+          />
         </div>
 
         {/* Title */}
